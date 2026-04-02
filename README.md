@@ -1,4 +1,4 @@
-# 🏗️ Construction Site Object Detection & Zone Classification (YOLOv8)
+# 🏗️ Construction Site Object Detection & Zone Classification(YOLOv8)
 
 ## 📌 Overview
 
@@ -18,11 +18,7 @@ The goal is to automatically identify construction personnel and safety equipmen
 
 ---
 
-## 🧠 System Architecture
-<img width="545" height="326" alt="image" src="https://github.com/user-attachments/assets/83ce5263-593c-4e1b-b2d1-f35fe3c6b9d9" />
 
-
----
 
 ## 📊 Dataset
 
@@ -125,7 +121,27 @@ Training performed using **Google Colab with T4 GPU** .
 * **Area for improvement** → Vest detection (limited training data)
 
 ---
+# 🦺 Safety Check Logic
 
+The system uses YOLO object detection to count workers, helmets, and vests, then applies zone-based safety rules.
+
+## How it works
+
+```python
+ Zone A: Active zone - needs BOTH helmet AND vest
+if zone == 'A':
+    if helmets >= persons and vests >= persons:
+        status = "✅ SAFE"
+    else:
+        status = "❌ UNSAFE"
+
+Zone B: General zone - needs helmet ONLY
+else:
+    if helmets >= persons:
+        status = "✅ SAFE"
+    else:
+        status = "❌ UNSAFE"
+```
 ## 🔍 Inference & Output
 
 The system produces:
@@ -168,14 +184,14 @@ The system produces:
 * Export results to CSV
 
 ---
----
 
 ## ⚠️ Limitations
-Limitation	                      Impact
-Small dataset (only 84 images)	  Limited generalization
-Class imbalance	                  Vest detection weaker (9 instances)
-Small validation set (12 images)	Metrics may not be fully reliable
-
+```
+Limitation	                          Impact
+Small dataset (only 84 images)	    Limited generalization
+Class imbalance	                   Vest detection weaker (9 instances)
+Small validation set (12 images)	  Metrics may not be fully reliable
+```
 ## 🚀 Future Improvements
 Collect more training data (target 500+ images per class)
 
@@ -194,12 +210,16 @@ Add confidence threshold tuning interface
 Integrate with live camera feeds
 
 ### Output Files
-File	                Description
+
+File	                 Description
 best.pt	              Best model weights (22.5 MB)
 last.pt	              Final epoch weights
-results.csv     	    Training metrics per epoch
-labels.jpg	          Label distribution visualization
+results.csv     	     Training metrics per epoch
+labels.jpg	           Label distribution visualization
 zone_labels.csv	Zone  classification for training images
+
+### Source Code
+You can access all files from Google Drive:https://drive.google.com/drive/folders/1-ZZpNsP_hVN0rlQIvgvykr5IsrZ_qLcd?usp=sharing
 
 ## 📌 Conclusion
 This project successfully implemented a YOLOv8-based object detection system for construction site monitoring using a limited dataset of only 84 self-collected images. Due to the small dataset size, the model's overall performance is modest, achieving a mean average precision (mAP@0.5) of 56%. However, the model demonstrates promising capabilities in detecting workers (64.3% mAP), helmets (53.7% mAP with 95% precision), and safety vests (50.2% mAP). While vest detection is weaker due to fewer training samples , the system successfully identifies key safety equipment and performs zone classification (Zone A/B) based on visual analysis. Despite performance limitations, this project serves as a valuable proof-of-concept demonstrating that even with minimal data, YOLOv8 can learn meaningful patterns for construction site monitoring. 
