@@ -97,11 +97,11 @@ Training performed using **Google Colab with T4 GPU** .
 
 | Metric              | Score   |
 | ------------------- | ------- |
-| mAP@0.5             | 0.560   |
-| mAP@0.75            | 0.409   |
-| mAP@0.5:0.95        | 0.377   |
+| mAP@0.5             | 0.614   |
+| mAP@0.75            | 0.53   |
+| mAP@0.5:0.95        | 0.46   |
 | Precision (mean)    | 0.799   |
-| Recall (mean)       | 0.471   |
+| Recall (mean)       | 0.634   |
 
 <img width="790" height="490" alt="image" src="https://github.com/user-attachments/assets/4e204d54-1455-41e9-875c-fe97cd504f21" />
 
@@ -223,4 +223,4 @@ zone_labels.csv	Zone  classification for training images
 You can access all files from Google Drive:https://drive.google.com/drive/folders/1-ZZpNsP_hVN0rlQIvgvykr5IsrZ_qLcd?usp=sharing
 
 ## 📌 Conclusion
-This project successfully implemented a YOLOv8-based object detection system for construction site monitoring using a limited dataset of only 84 self-collected images. Due to the small dataset size, the model's overall performance is modest, achieving a mean average precision (mAP@0.5) of 56%. However, the model demonstrates promising capabilities in detecting workers (64.3% mAP), helmets (53.7% mAP with 95% precision), and safety vests (50.2% mAP). While vest detection is weaker due to fewer training samples , the system successfully identifies key safety equipment and performs zone classification (Zone A/B) based on visual analysis. Despite performance limitations, this project serves as a valuable proof-of-concept demonstrating that even with minimal data, YOLOv8 can learn meaningful patterns for construction site monitoring. 
+This project successfully implemented a YOLOv8-based object detection system for construction site monitoring using a limited dataset of only 84 self-collected images. Due to the small dataset size, the model's overall performance is modest, achieving a mean average precision (mAP@0.5) of 61%. However, the model demonstrates promising capabilities in detecting workers (64.3% mAP), helmets (53.7% mAP with 95% precision), and safety vests (50.2% mAP). While vest detection is weaker due to fewer training samples , the system successfully identifies key safety equipment and performs zone classification (Zone A/B) based on visual analysis. Despite performance limitations, this project serves as a valuable proof-of-concept demonstrating that even with minimal data, YOLOv8 can learn meaningful patterns for construction site monitoring. 
