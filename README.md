@@ -85,7 +85,8 @@ The goal is to automatically identify construction personnel and safety equipmen
 Training performed using **Google Colab with T4 GPU** .
 
 ### Training progress and Loss Reduction
-<img width="1189" height="490" alt="image" src="https://github.com/user-attachments/assets/c93160bf-9650-4169-ba61-82b7ef9e047c" />
+
+<img width="1189" height="490" alt="image" src="https://github.com/user-attachments/assets/88a48198-27c5-475b-9554-89594baf26a4" />
 
 
 ---
@@ -102,7 +103,7 @@ Training performed using **Google Colab with T4 GPU** .
 | Precision (mean)    | 0.799   |
 | Recall (mean)       | 0.471   |
 
-<img width="695" height="452" alt="image" src="https://github.com/user-attachments/assets/53b0cc70-a1ab-4341-a474-4a085b32fff9" />
+<img width="790" height="490" alt="image" src="https://github.com/user-attachments/assets/4e204d54-1455-41e9-875c-fe97cd504f21" />
 
 
 ### Per-Class Performance
